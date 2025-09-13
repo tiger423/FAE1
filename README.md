@@ -1,9 +1,3 @@
-sudo pip install -r requirements.txt
-
-sudo python3  tossd_test_suite.py
-
-sudo usermod -aG sudo your_username
-
 
 Replace your_username with the actual username you want to grant privileges to. 
 
@@ -11,9 +5,6 @@ The -a flag ensures that the user is added to the sudo group without removing th
 
 After adding the user to the sudo group, they can execute commands with root privileges by preceding them with sudo. For example:
 
-
-Solution 3: Virtual Environment Method
-bash
 
 # Create virtual environment
 python3 -m venv ssd_env
@@ -24,23 +15,6 @@ pip install psutil pandas
 deactivate
 sudo ssd_env/bin/python ssd_test_suite.py
 
-Solution 4: Explicit Python Path
-bash
-
-# Find your python path
-which python3
-# Use explicit path with sudo
-sudo /usr/bin/python3 ssd_test_suite.py
-# or
-sudo $(which python3) ssd_test_suite.py
-
-Solution 5: Environment Variables
-bash
-
-# Preserve environment variables
-sudo -E python3 ssd_test_suite.py
-
----
 
 
 FUNCTIONS THAT COULD WORK WITHOUT ROOT
